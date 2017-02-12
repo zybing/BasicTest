@@ -14,8 +14,9 @@ public class MyAddress {
             int lastPoint = IP.lastIndexOf('.');
             String ipHead = IP.substring(0, ++lastPoint);
             SecurityManager security=new SecurityManager();
+            System.setSecurityManager(security);
             //SecurityManager security = System.getSecurityManager();
-            security.checkConnect(ipHead+"14",22);
+            security.checkConnect("127.0.0.1",80);
             //System.out.println(ipHead);
         } catch (UnknownHostException ex) {
             System.out.println("Could not find this computer's address.");
